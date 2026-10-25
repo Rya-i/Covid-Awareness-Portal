@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}Feedback{% endblock %}
+{% block content %}
+<section class="wrap section narrow">
+  <h1>Share your feedback</h1>
+  {% if errors %}<div class="alert alert-urgent" role="alert"><ul>{% for e in errors %}<li>{{ e }}</li>{% endfor %}</ul></div>{% endif %}
+  <form method="post" novalidate>
+    <label for="name">Name (optional)</label>
+    <input id="name" name="name" maxlength="100" value="{{ form.name }}">
+    <label for="email">Email (optional)</label>
+    <input id="email" name="email" type="email" maxlength="150" value="{{ form.email }}">
+    <label for="category">Category</label>
+    <select id="category" name="category" required>
+      <option value="">Choose a category</option>
+      {% for c in categories %}<option value="{{ c }}" {% if form.category == c %}selected{% endif %}>{{ c }}</option>{% endfor %}
+    </select>
+    <label for="message">Message</label>
+    <textarea id="message" name="message" rows="6" maxlength="1000" required>{{ form.message }}</textarea>
+    <small><span id="count">0</span>/1000</small>
+    <button class="btn" type="submit">Send feedback</button>
+  </form>
+</section>
+{% endblock %}

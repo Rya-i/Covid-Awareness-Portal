@@ -1,0 +1,42 @@
+:root{--navy:#14213d;--violet:#5b4bdb;--violet-d:#4637b8;--bg:#f7f8fc;--card:#fff;--text:#1d2433;--muted:#5b6478;--line:#e1e4ee;--red:#b42318;--red-bg:#fdecea;--blue-bg:#eef0ff}
+*{box-sizing:border-box}
+body{margin:0;font:16px/1.65 system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--text);background:var(--bg)}
+h1,h2{color:var(--navy);line-height:1.25}h1{font-size:2rem}h2{font-size:1.2rem}
+a{color:var(--violet-d)}:focus-visible{outline:3px solid var(--violet);outline-offset:2px}
+.wrap{max-width:1050px;margin:0 auto;padding:0 20px}.narrow{max-width:720px;margin:0 auto}.center{text-align:center}
+.section{padding:40px 20px}.lead{color:var(--muted);max-width:65ch}.prose{max-width:720px}
+.skip{position:absolute;left:-999px}.skip:focus{left:10px;top:10px;background:#fff;padding:8px;z-index:10}
+.site-header{background:var(--navy);position:sticky;top:0;z-index:5}
+.bar{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;padding-top:10px;padding-bottom:10px}
+.brand{color:#fff;font-weight:700;text-decoration:none}
+nav{display:flex;flex-wrap:wrap;gap:4px}
+nav a{color:#d6dbf5;text-decoration:none;padding:6px 12px;border-radius:6px}
+nav a:hover,nav a[aria-current]{background:var(--violet);color:#fff}
+.menu-btn{display:none;background:var(--violet);color:#fff;border:0;padding:8px 14px;border-radius:6px;font:inherit}
+.hero{background:linear-gradient(135deg,var(--navy),var(--violet));color:#fff;padding:80px 0}
+.hero h1{color:#fff;font-size:2.6rem;max-width:18ch;animation:rise .7s ease both}
+.hero p{max-width:55ch;color:#e4e7ff;font-size:1.1rem}
+@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.btn{display:inline-block;background:var(--violet);color:#fff;border:0;padding:12px 24px;border-radius:8px;font:600 1rem system-ui,sans-serif;text-decoration:none;cursor:pointer;margin-top:12px}
+.btn:hover{background:var(--violet-d)}.hero .btn{background:#fff;color:var(--navy)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px;margin:24px 0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:22px}
+.link-card{text-decoration:none;color:inherit;transition:transform .2s,border-color .2s}
+.link-card:hover{transform:translateY(-3px);border-color:var(--violet)}
+.card p{color:var(--muted);margin:0}.card h2{margin:8px 0}.icon{font-size:1.8rem}small{color:var(--muted);word-break:break-all}
+.alert{border-radius:10px;padding:16px 20px;margin:24px 0;border-left:5px solid}
+.alert-urgent{background:var(--red-bg);border-color:var(--red);color:#5c1510}.alert-urgent h2{color:var(--red)}
+.alert-info{background:var(--blue-bg);border-color:var(--violet)}
+.accordion{margin-top:20px}.acc-item{background:var(--card);border:1px solid var(--line);border-radius:10px;margin-bottom:10px}
+.acc-item h2{margin:0;font-size:1rem}
+.acc-btn{width:100%;text-align:left;background:none;border:0;padding:16px 48px 16px 18px;font:600 1rem system-ui,sans-serif;color:var(--navy);cursor:pointer;position:relative}
+.acc-btn::after{content:"+";position:absolute;right:18px;font-size:1.3rem;color:var(--violet)}
+.acc-btn[aria-expanded=true]::after{content:"\2212"}.acc-panel{padding:0 18px 16px}.acc-panel p{margin:0;color:var(--muted)}
+form label{display:block;font-weight:600;margin:16px 0 6px}
+input:not([type=checkbox]),select,textarea{width:100%;padding:10px 12px;border:1px solid #b9bfd3;border-radius:8px;font:inherit;background:#fff}
+fieldset{border:1px solid var(--line);border-radius:10px;margin:16px 0;background:#fff}legend{font-weight:700;color:var(--navy);padding:0 8px}
+form .check{font-weight:400;display:flex;gap:10px;align-items:center;margin:8px 0}.check input{width:20px;height:20px}
+.error-text{color:var(--red);font-weight:600}
+.site-footer{background:var(--navy);color:#c9cfee;padding:28px 0;margin-top:40px;font-size:.9rem}.site-footer p{margin:6px 0}
+@media(max-width:760px){.menu-btn{display:block}nav{display:none;width:100%;flex-direction:column}nav.open{display:flex}.hero{padding:50px 0}.hero h1{font-size:2rem}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}

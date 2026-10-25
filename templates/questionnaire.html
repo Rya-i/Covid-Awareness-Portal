@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}Symptom Questionnaire{% endblock %}
+{% block content %}
+<section class="wrap section narrow">
+  <h1>Informational symptom questionnaire</h1>
+  <div class="alert alert-info"><strong>Not a diagnostic tool.</strong> It does not diagnose COVID-19 and nothing you select is saved. If you are concerned, consult a healthcare professional.</div>
+  {% if error %}<div class="alert alert-urgent" role="alert" id="formError">{{ error }}</div>{% endif %}
+  <form method="post" id="qForm" novalidate>
+    <fieldset><legend>Symptoms I am experiencing</legend>
+      {% for k, label in common %}<label class="check"><input type="checkbox" name="symptoms" value="{{ k }}" {% if k in selected %}checked{% endif %}> {{ label }}</label>{% endfor %}
+    </fieldset>
+    <fieldset><legend>Serious warning signs</legend>
+      {% for k, label in severe %}<label class="check"><input type="checkbox" name="symptoms" value="{{ k }}" {% if k in selected %}checked{% endif %}> {{ label }}</label>{% endfor %}
+    </fieldset>
+    <label class="check"><input type="checkbox" name="none" value="1" id="noneBox"> None of these</label>
+    <p class="error-text" id="jsError" role="alert" hidden>Please select at least one symptom, or tick "None of these".</p>
+    <button class="btn" type="submit">Show information</button>
+  </form>
+  {% if result %}
+  <div class="alert {{ 'alert-urgent' if result[0]=='urgent' else 'alert-info' }}" role="status"><h2>General information</h2><p>{{ result[1] }}</p></div>
+  {% endif %}
+</section>
+{% endblock %}

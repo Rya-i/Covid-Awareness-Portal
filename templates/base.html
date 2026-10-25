@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}COVID-19 Awareness and Information Portal{% endblock %}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap bar">
+      <a class="brand" href="{{ url_for('index') }}">🦠 COVID-19 Portal</a>
+      <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="nav">Menu</button>
+      <nav id="nav" aria-label="Main">
+        {% for ep, label in [('index','Home'),('about','About'),('symptoms','Symptoms'),('prevention','Prevention'),('faq','FAQ'),('questionnaire','Questionnaire'),('resources','Resources'),('feedback','Feedback')] %}
+        <a href="{{ url_for(ep) }}" {% if request.endpoint == ep %}aria-current="page"{% endif %}>{{ label }}</a>
+        {% endfor %}
+      </nav>
+    </div>
+  </header>
+  <main id="main">{% block content %}{% endblock %}</main>
+  <footer class="site-footer">
+    <div class="wrap">
+      <p><strong>COVID-19 Awareness and Information Portal</strong> — Final-year Computer Engineering STQA mini project.</p>
+      <p class="disclaimer">Health disclaimer: this website is for general awareness only and is not medical advice. Consult a qualified healthcare professional and current official sources.</p>
+    </div>
+  </footer>
+  <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

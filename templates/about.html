@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}About COVID-19{% endblock %}
+{% block content %}
+<section class="wrap section prose">
+  <h1>About COVID-19</h1>
+  <h2>What is it?</h2><p>COVID-19 is an infectious respiratory disease caused by the SARS-CoV-2 virus. Severity ranges from no symptoms to serious illness.</p>
+  <h2>How does it spread?</h2><p>It spreads mainly through respiratory droplets and aerosols released when an infected person coughs, sneezes, talks or breathes. Close contact and poorly ventilated indoor spaces increase the chance of spread.</p>
+  <h2>Common symptoms</h2><p>Fever, cough, sore throat, fatigue and loss of taste or smell. See the <a href="{{ url_for('symptoms') }}">Symptoms page</a>.</p>
+  <h2>Prevention</h2><p>Hand hygiene, respiratory etiquette, good ventilation, staying home when ill and vaccination. See <a href="{{ url_for('prevention') }}">Prevention</a>.</p>
+  <h2>Reliable information</h2><p>Use official sources such as WHO, CDC and India's MoHFW on our <a href="{{ url_for('resources') }}">Resources page</a>. Guidance changes, so check for updates.</p>
+</section>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Symptoms{% endblock %}
+{% block content %}
+<section class="wrap section">
+  <h1>Common symptoms</h1>
+  <p class="lead">Symptoms vary from person to person and often overlap with colds, flu and other illnesses. Having a symptom does not mean you have COVID-19.</p>
+  <div class="grid">
+    {% for icon, title, text in symptoms %}<div class="card"><span class="icon">{{ icon }}</span><h2>{{ title }}</h2><p>{{ text }}</p></div>{% endfor %}
+  </div>
+  <div class="alert alert-urgent" role="alert">
+    <h2>Serious warning signs — seek urgent medical attention</h2>
+    <ul>{% for w in warning_signs %}<li>{{ w }}</li>{% endfor %}</ul>
+    <p>Call your local emergency number or go to the nearest hospital.</p>
+  </div>
+</section>
+{% endblock %}

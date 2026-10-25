@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}Prevention{% endblock %}
+{% block content %}
+<section class="wrap section">
+  <h1>Prevention</h1>
+  <p class="lead">General awareness measures. Always follow current advice from health authorities.</p>
+  <div class="grid">
+    {% for icon, title, text in items %}<div class="card"><span class="icon">{{ icon }}</span><h2>{{ title }}</h2><p>{{ text }}</p></div>{% endfor %}
+  </div>
+  <h2>Official guidance</h2>
+  <ul>{% for name, url, _ in resources %}<li><a href="{{ url }}" target="_blank" rel="noopener noreferrer">{{ name }}</a></li>{% endfor %}</ul>
+</section>
+{% endblock %}

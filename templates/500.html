@@ -1,0 +1,5 @@
+{% extends "base.html" %}
+{% block title %}Something went wrong{% endblock %}
+{% block content %}
+<section class="wrap section narrow center"><h1>500 — Something went wrong</h1><p>We hit a problem on our side. Please try again later.</p><a class="btn" href="{{ url_for('index') }}">Go to home</a></section>
+{% endblock %}

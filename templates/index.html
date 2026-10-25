@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="hero"><div class="wrap">
+  <h1>COVID-19 Awareness and Information Portal</h1>
+  <p>Clear, calm, reliable basics about COVID-19: what it is, how to spot symptoms, and how to protect yourself and others.</p>
+  <a class="btn" href="{{ url_for('about') }}">Explore COVID-19 information</a>
+</div></section>
+<section class="wrap section">
+  <div class="grid">
+    {% for icon, title, text, ep in cards %}
+    <a class="card link-card" href="{{ url_for(ep) }}"><span class="icon">{{ icon }}</span><h2>{{ title }}</h2><p>{{ text }}</p></a>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}

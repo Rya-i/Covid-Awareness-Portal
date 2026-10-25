@@ -1,0 +1,6 @@
+{% extends "base.html" %}
+{% block title %}Feedback sent{% endblock %}
+{% block content %}
+<section class="wrap section narrow center"><div class="alert alert-info" role="status"><h1>Thank you!</h1><p>Your feedback was submitted successfully.</p></div>
+<a class="btn" href="{{ url_for('index') }}">Back to home</a></section>
+{% endblock %}
